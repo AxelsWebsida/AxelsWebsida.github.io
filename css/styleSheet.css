@@ -1,0 +1,221 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  background: #bc5c38;
+  overflow-x: hidden;
+}
+
+header {
+  background-image: url("../img/headerimg.png");
+  width: 100%;
+  height: 8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+header h1 {
+  color: white;
+  font-size: 5rem;
+}
+
+footer {
+  background-image: url("../img/headerimg.png");
+  width: 100%;
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+main {
+  height: justify;
+  background: lightgray;
+  width: 100%;
+  min-height: calc(100vh - 8rem);
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+main .grid-container {
+  margin: 0;
+  height: 100%;
+  display: grid;
+  row-gap: 2rem;
+  column-gap: 2rem;
+  grid-template-rows: repeat(13, auto);
+  grid-template-columns: repeat(6, auto);
+  grid-template-areas:
+    "item-a item-a item-a item-a item-a item-a"
+    "item-a item-a item-a item-a item-a item-a"
+    "item-a item-a item-a item-a item-a item-a"
+
+    "item-b item-b item-b . . ."
+    "item-b item-b item-b . . ."
+    "item-c item-c item-c item-c item-c item-c"
+
+    "item-e item-e item-e item-e item-e item-e"
+    "item-e item-e item-e item-e item-e item-e"
+    "item-e item-e item-e item-e item-e item-e"
+
+    "item-f item-f item-f item-f item-g item-g"
+    "item-f item-f item-f item-f item-h item-h"
+    "item-f item-f item-f item-f . ."
+
+    "item-i item-i item-i item-i item-i item-i";
+}
+
+main .menu {
+  position: absolute;
+  margin-left: calc(100% - 350px);
+  background-color: lightgray;
+  height: 27rem;
+  width: 350px;
+  font-size: 3rem;
+  box-shadow: 0.5rem 0.5rem 0.5rem black;
+}
+
+.menu ul {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+}
+
+.menu li {
+  width: 350px;
+  height: 20%;
+  background-color: #e16f45;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  padding-left: 1.5rem;
+}
+
+.menu li:nth-child(even){
+    background-color: coral;
+}
+
+.menu li a:link, .menu li a:visited, .menu li a:active {
+  color: white;
+  text-decoration: none;
+}
+
+@media (min-width: 980px) { /* Desktop */
+  .grid-container {
+    width: calc(100% - 400px);
+  }
+  main .menu {
+    margin-left: calc(100% - 375px);
+    width: 350px;
+    border-radius: 1rem;
+  }
+  main .menu li:first-child {
+    border-radius: 1rem 1rem 0 0;
+  }
+
+  main .menu li:last-child {
+    border-radius: 0 0 1rem 1rem;
+  }
+}
+
+@media (max-width: 980px) and (min-width: 768px) { /* Tablet */
+  .grid-container {
+    width: calc(100% - 100px);
+  }
+  main .menu {
+    margin-left: calc(100% - 80px);
+    width: 100px;
+    box-shadow: none;
+  }
+
+  main .menu li {
+    transition: 1s;
+  }
+
+  main .menu li:hover {
+    margin-left: -270px;
+    transition: 1s;
+  }
+}
+
+@media (max-width: 768px) { /* phone */
+  .grid-container {
+    width: 100%;
+  }
+  main .menu {
+    opacity: 0.5;
+    border-radius: 1rem 0 0 1rem;
+    background-color: black;
+    margin-top: -8rem;
+    height: 4rem;
+    width: 4rem;
+    margin-left: calc(100% - 4rem);
+  }
+
+  .menu li {
+    visibility: hidden;
+  }
+  main .menu:hover {
+    border-radius: 2rem;
+    opacity: 1;
+    height: 27rem;
+    width: calc(350px + 2rem);
+    margin-top: -8rem;
+    margin-left: calc(100% - 350px);
+    background-color: #bc5c38;
+  }
+  main .menu:hover li {
+    visibility: visible;
+    margin: 0;
+  }
+
+  main .menu li:first-child {
+    border-radius: 1rem 0 0 0;
+  }
+
+  main .menu li:last-child {
+    border-radius: 0 0 0 1rem;
+  }
+
+  main .menu:hover ul {
+    padding: 1rem;
+    padding-right: 2rem;
+  }
+}
+
+main .grid-container div h2 {
+  color: white;
+  padding: 1rem;
+  width: 100%;
+  min-height: 4rem;
+  height: justify;
+  background-color: #e16f45;
+  font-size: 2rem;
+  font-family: Tahoma, sans-serif;
+}
+
+main .grid-container div p {
+  padding: 1rem;
+  font-size: 1.5rem;
+}
+
+main .grid-container div .tom {
+  margin: 1rem;
+  border: ridge 1rem coral;
+  display: block;
+  float: right;
+  width: 18rem;
+}
+
+main .grid-container div .jerry {
+  width: 100%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  object-fit: contain;
+}

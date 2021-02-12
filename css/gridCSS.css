@@ -1,0 +1,62 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.grid-container div {
+  background-color: lightgray;
+  border-color: coral;
+  border-style: solid;
+  border-width: 1rem;
+  box-shadow: 0.5rem 0.5rem 0.5rem black;
+}
+
+.grid-container div a:link, .grid-container div a:visited, .grid-container div a:active {
+  color: black;
+  font-weight: bold;
+}
+
+.item-a {
+  grid-area: item-a;
+  min-height: 27rem;
+}
+
+.item-b {
+  grid-area: item-b;
+}
+
+.item-c {
+  grid-area: item-c;
+  min-height: 9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.item-e {
+  grid-area: item-e;
+  min-height: 27rem;
+}
+
+.item-f {
+  grid-area: item-f;
+  min-height: 27rem;
+}
+
+.item-g {
+  grid-area: item-g;
+  background-color: coral;
+}
+
+.item-h {
+  grid-area: item-h;
+}
+
+.item-i {
+  grid-area: item-i;
+  min-height: 9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
